@@ -1,0 +1,64 @@
+# Inferential Analysis
+
+## Chi-square: Risk behaviour vs Reward
+reward_label  no_reward  reward
+risk_label                     
+avoidance            72     386
+risk_taking         351      98
+chi2=352.834, dof=1, p=0.00000
+
+## Chi-square: Risk behaviour vs Season
+season        0    1
+risk_label          
+avoidance    66  392
+risk_taking  85  364
+chi2=3.021, dof=1, p=0.08219
+
+## Logistic Regression: risk ~ seconds_after_rat_arrival + hours_after_sunset + C(season)
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:                   risk   No. Observations:                  907
+Model:                          Logit   Df Residuals:                      903
+Method:                           MLE   Df Model:                            3
+Date:                Wed, 10 Sep 2025   Pseudo R-squ.:                0.006174
+Time:                        10:25:03   Log-Likelihood:                -624.76
+converged:                       True   LL-Null:                       -628.64
+Covariance Type:            nonrobust   LLR p-value:                   0.05118
+=============================================================================================
+                                coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------
+Intercept                     0.4823      0.231      2.090      0.037       0.030       0.935
+C(season)[T.1]               -0.3585      0.182     -1.969      0.049      -0.715      -0.002
+seconds_after_rat_arrival     0.0003      0.000      1.081      0.279      -0.000       0.001
+hours_after_sunset           -0.0523      0.028     -1.879      0.060      -0.107       0.002
+=============================================================================================
+
+## OLS: bat_landing_number ~ rat_arrival_number + rat_minutes + food_availability
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     bat_landing_number   R-squared:                       0.031
+Model:                            OLS   Adj. R-squared:                  0.030
+Method:                 Least Squares   F-statistic:                     22.57
+Date:                Wed, 10 Sep 2025   Prob (F-statistic):           2.21e-14
+Time:                        10:25:03   Log-Likelihood:                -9863.7
+No. Observations:                2123   AIC:                         1.974e+04
+Df Residuals:                    2119   BIC:                         1.976e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+const                 28.0342      1.261     22.225      0.000      25.561      30.508
+rat_arrival_number     0.4637      0.663      0.700      0.484      -0.836       1.764
+rat_minutes           -0.5716      0.100     -5.743      0.000      -0.767      -0.376
+food_availability      2.0373      0.450      4.524      0.000       1.154       2.920
+==============================================================================
+Omnibus:                      361.286   Durbin-Watson:                   0.378
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              636.615
+Skew:                           1.076   Prob(JB):                    5.77e-139
+Kurtosis:                       4.601   Cond. No.                         17.3
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+

@@ -1,0 +1,51 @@
+# Descriptive Summary
+
+## Dataset 1 (Bat landing events)
+Rows: 907
+
+Columns:
+start_time, bat_landing_to_food, habit, rat_period_start, rat_period_end, seconds_after_rat_arrival, risk, reward, month, sunset_time, hours_after_sunset, season, since_rat_bin, risk_label, reward_label
+
+Missing values per column:
+start_time                   0
+bat_landing_to_food          0
+habit                        0
+rat_period_start             0
+rat_period_end               0
+seconds_after_rat_arrival    0
+risk                         0
+reward                       0
+month                        0
+sunset_time                  0
+hours_after_sunset           0
+season                       0
+since_rat_bin                0
+risk_label                   0
+reward_label                 0
+
+Risk-taking proportion:
+avoidance      0.504961
+risk_taking    0.495039
+
+Reward proportion:
+reward       0.533627
+no_reward    0.466373
+
+## Dataset 2 (Rat period summaries)
+Rows: 2123
+
+Columns:
+time, month, hours_after_sunset, bat_landing_number, food_availability, rat_minutes, rat_arrival_number, rat_minutes_z, rat_arrival_z, rat_intensity
+
+Missing values per column:
+time                  0
+month                 0
+hours_after_sunset    0
+bat_landing_number    0
+food_availability     0
+rat_minutes           0
+rat_arrival_number    0
+rat_minutes_z         0
+rat_arrival_z         0
+rat_intensity         0
+
